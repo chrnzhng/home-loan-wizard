@@ -4,6 +4,16 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import store from './store';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+
+ReactDOM.render(
+    <BrowserRouter>
+        <Provider>
+            <App store={store}/>
+        </Provider>
+    </BrowserRouter>, 
+document.getElementById('root'));
 registerServiceWorker();
 
